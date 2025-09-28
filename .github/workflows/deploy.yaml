@@ -43,7 +43,7 @@ jobs:
 
       - name: Deploy to Google Cloud Run
         run: |
-          gcloud run deploy sol-payment-app \
+          gcloud run deploy sol \
           --image ${{ secrets.PROJECT_REGION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/bg-images/${{ env.IMAGE }}:${{ github.sha }} \
           --port=3000 \
           --region ${{ secrets.PROJECT_REGION }} \
