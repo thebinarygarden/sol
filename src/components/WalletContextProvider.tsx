@@ -27,7 +27,7 @@ export default function WalletContextProvider({
   children,
 }: WalletContextProviderProps) {
   const endpoint = useMemo(() => {
-    return process.env.NEXT_PUBLIC_SOLANA_RPC_URL || "";
+    return process.env.NEXT_PUBLIC_SOLANA_RPC_URL || "https://api.devnet.solana.com";
   }, []);
 
   const wallets = useMemo(() => [], []);
