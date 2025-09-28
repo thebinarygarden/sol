@@ -25,6 +25,10 @@ COPY . .
 # Install pnpm
 RUN npm install -g pnpm
 
+# Set default environment variable for build time (devnet)
+ARG NEXT_PUBLIC_SOLANA_RPC_URL=https://api.devnet.solana.com
+ENV NEXT_PUBLIC_SOLANA_RPC_URL=$NEXT_PUBLIC_SOLANA_RPC_URL
+
 # Build the application
 RUN pnpm build
 
