@@ -40,6 +40,8 @@ jobs:
           push: true
           tags: ${{ secrets.PROJECT_REGION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/bg-images/${{ env.IMAGE }}:${{ github.sha }}
           no-cache: true
+          build-args: |
+            NEXT_PUBLIC_SOLANA_RPC_URL=${{ secrets.NEXT_PUBLIC_SOLANA_RPC_URL }}
 
       - name: Deploy to Google Cloud Run
         run: |
